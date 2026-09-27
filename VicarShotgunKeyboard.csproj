@@ -10,7 +10,6 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Assets/AppIcon.ico</ApplicationIcon>
     <Platforms>x64;ARM64;x86</Platforms>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
     <FileVersion>1.0.0.0</FileVersion>
@@ -21,8 +20,5 @@
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.26100.4948" />
     <PackageReference Include="NAudio" Version="2.2.1" />
   </ItemGroup>
-  <ItemGroup>
-    <None Update="Assets\Sounds\**\*.wav" CopyToOutputDirectory="PreserveNewest" />
-    <None Update="Package.appxmanifest" CopyToOutputDirectory="PreserveNewest" />
-  </ItemGroup>
+  <ItemGroup><None Update="Assets\Sounds\**\*.wav" CopyToOutputDirectory="PreserveNewest" /></ItemGroup>
 </Project>
