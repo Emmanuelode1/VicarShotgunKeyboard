@@ -1,0 +1,1 @@
+namespace VicarShotgunKeyboard.Models; public sealed class SoundItem{public string Name{get;set;}="";public string FilePath{get;set;}="";public bool IsBuiltIn{get;set;}public bool Enabled{get;set;}=true;public override string ToString()=>Name;}
