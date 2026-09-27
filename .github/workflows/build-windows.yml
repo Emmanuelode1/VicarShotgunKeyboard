@@ -1,0 +1,27 @@
+name: Windows Build
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  build:
+    runs-on: windows-2022
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore
+        run: dotnet restore .\VicarShotgunKeyboard.csproj
+      - name: Build Release
+        run: dotnet build .\VicarShotgunKeyboard.csproj -c Release -p:Platform=x64 --no-restore
+      - name: Publish
+        run: dotnet publish .\VicarShotgunKeyboard.csproj -c Release -r win-x64 --self-contained true -p:Platform=x64 --no-restore -o .\artifacts\win-x64
+      - uses: actions/upload-artifact@v4
+        with:
+          name: VicarShotgunKeyboard-1.0.0-win-x64
+          path: .\artifacts\win-x64\**
