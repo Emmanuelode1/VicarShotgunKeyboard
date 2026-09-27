@@ -1,0 +1,1 @@
+using System.Collections.Generic; namespace VicarShotgunKeyboard.Models; public sealed class SoundPack{public string Name{get;set;}="";public string DirectoryPath{get;set;}="";public List<SoundItem> Sounds{get;}=new();public override string ToString()=>Name;}
